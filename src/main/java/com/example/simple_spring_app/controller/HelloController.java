@@ -11,6 +11,13 @@ import java.util.Map;
 @RestController
 public class HelloController {
 
+    @GetMapping
+    public ResponseEntity<?> getRoot() {
+        Map<String, String> map = new HashMap<>();
+        map.put("message", "Hello World from root!");
+        map.put("method", "GET");
+        return ResponseEntity.ok(map);
+    }
     @GetMapping("/hello")
     public ResponseEntity<?> getHello() {
         Map<String, String> map = new HashMap<>();
